@@ -5,20 +5,21 @@
 \newcommand{\rmnum}[1]{\romannumeral #1}
 \newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
 \makeatother
+\setbeamertemplate{navigation symbols}{}
+
  
 %Information to be included in the title page:
-\title[NOAA workshop (Washington DC): Leveraging AI in the exploitation of Satellite Earth Observations \& numerical weather prediction] %optional
-{NOAA Workshop}
+\title[NOAA Workshop] %optional
+{NOAA workshop (Washington DC): Leveraging AI in the exploitation of Satellite Earth Observations \& numerical weather prediction}
 
 
 \author{Sophie Giffard-Roisin, Saumya Sinha}
 
 
-\institute[CU] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
-{
-	
+\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{	
 }
-\date{\today} % Date, can be changed to a custom date
+\date{} % Date, can be changed to a custom date
  
  
  
@@ -26,6 +27,10 @@
 
 \begin{frame}
 \titlepage % Print the title page as the first slide
+\begin{figure}
+	\includegraphics[width=0.25\linewidth]{figs/NOAA_picture.jpg}
+\end{figure}
+
 \end{frame}
 
 \begin{frame}
@@ -157,6 +162,7 @@
 \end{itemize}
 \end{frame}
 
+
 \begin{frame}
 \frametitle{ClimateNet, Philip Tissot, AMS AI}
 \begin{figure}
@@ -164,10 +170,12 @@
 \end{figure}
 \end{frame}
 
+
+
 \begin{frame}
-\frametitle{RAPIDS, David Hall, NVIDIA}
+\frametitle{SCAN organization (Science for Climate Action Network) - Philip Tissot, AMS AI}
 \begin{figure}
-	\includegraphics[width=\linewidth]{figs/IMG_20190423_124704.jpg}
+	\includegraphics[width=\linewidth]{figs/P_20190423_105212.jpg}
 \end{figure}
 \end{frame}
 
@@ -179,9 +187,9 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{SCAN organization (Science for Climate Action Network) - Philip Tissot, AMS AI}
+\frametitle{RAPIDS, David Hall, NVIDIA}
 \begin{figure}
-	\includegraphics[width=\linewidth]{figs/P_20190423_105212.jpg}
+	\includegraphics[width=\linewidth]{figs/IMG_20190423_124704.jpg}
 \end{figure}
 \end{frame}
 
@@ -326,6 +334,14 @@ github.com/google/pde-superresolution
 \end{frame}
 
 \begin{frame}
+\frametitle{Christina Kumler, NOAA Boulder \textit{(Using DL to extract regions of interest from satellite data)}}
+\begin{figure}
+	\includegraphics[width=\linewidth]{figs/P_20190424_092340.jpg}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
 \frametitle{Alexandra Grimes, MSU \textit{(Atlantic basin rapid intensification prediction enhancement through NWP spatial information)}}
 \begin{figure}
 	\includegraphics[width=.9\linewidth]{figs/P_20190424_102707.jpg}
@@ -394,216 +410,20 @@ Cloud Evaluation
 
 
 
-%
-%\begin{frame}
-%\frametitle{Outline} % Table of contents slide, comment this block out to remove it
-%\tableofcontents[currentsection] % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
-%\end{frame}
-%
-%\begin{frame}
-%\frametitle{Fused Deep Learning for Hurricane Track Forecast} % Table of contents slide, comment this block out to remove it
-%\textit{Joint work with Mo Yang, Claire Monteleoni and Guillaume Charpiat}\\
-%\begin{figure}
-%	\includegraphics[width=0.7\linewidth]{figs/hurricane-florence-2018-monday-radar.jpg}
-%	\caption{Hurricane Florence, Monday radar.}
-%\end{figure}
-%\end{frame}
-
-
-%\begin{frame}
-%\frametitle{Hurricanes}
-%
-%\begin{figure}
-%	\includegraphics[width=0.6\linewidth, height=0.6\textheight]{figs/Katrina.png}
-%	\includegraphics[width=0.3\linewidth, height=0.4\textheight]{figs/saffir-simpson.png}
-%\end{figure}
-%\begin{itemize}
-%\item Hurricane Katrina, 2005. (1 dot every 6 hours).\\
-%\item \textbf{Tracks} and \textbf{Intensity} : Two main goals of the forecast
-%\end{itemize}
-%\end{frame}
-%
-%\subsection{Problem Setting}
-%\begin{frame}
-%\frametitle{Problem Setting}
-%\begin{itemize}
-%	\item Goal: estimating the 24h-forecast trajectory of all tropical storms.  \\
-%\end{itemize}
-%\begin{figure}
-%	\includegraphics[width=0.8\linewidth]{figs/storm_shema.png}
-%\end{figure}
-%\end{frame}
-%
-%\subsection{Data Description}
-%
-%\begin{frame}
-%\frametitle{Data sources}
-%	\begin{figure}
-%		\includegraphics[width=0.7\linewidth]{figs/all_storms.png}
-%		\label{fig: storm_tracks}
-%		\caption{Database: 3000 tropical/extra-tropical storm tracks since 1979. (NOAA database IBTrACS, every 6h)}
-%	\end{figure}
-%
-%\end{frame}
-%
-%\begin{frame}
-%\frametitle{Data sources}
-%\begin{itemize}
-%	\item \textbf{Reanalysis data:} 
-%	\begin{itemize}
-%		\item Global atmospheric grids : wind fields, pressure, temperature, humidity... 
-%		\item Whole planet (resolution: 80km), 60 vertical levels, every 6h
-%	\end{itemize}
-%	\begin{figure}
-%	\centering
-%		\includegraphics[width=0.33\linewidth]{figs/reanalysis_grid.jpg}
-%		\hfill
-%		\includegraphics[width=0.46\linewidth]{figs/hurricane_schema.pdf}
-%	\end{figure}
-%\end{itemize}
-%\end{frame}
-%
-%\subsection{Fused CNN}
-%\begin{frame}
-%\frametitle{Learn 24h-track forecast from conv. neural network}
-%\begin{itemize}
-%	\item  Three-stream fusion network \\
-%\end{itemize}
-%\begin{figure}
-%	\includegraphics[width=1.0\linewidth]{figs/fusion_network.pdf}
-%\end{figure}
-%\end{frame}
-%
-%\begin{frame}
-%\frametitle{Training a Fusion Network}
-%\begin{itemize}
-%	\item  Stage \Rmnum{1}: Train separate networks \\
-%	\item  Stage \Rmnum{2}: Train the fusion network \\
-%	\begin{itemize}
-%		\item  Zoom in fusion layers:
-%		\begin{figure}
-%			\flushleft
-%			\includegraphics[width=0.65\linewidth]{figs/fusion_details.pdf} \\
-%		\end{figure}
-%		\item Add connections between different streams in fusion layers
-%		\item Re-train the whole network
-%		%item two-phase optimization:
-%		%	\begin{itemize}
-%		%		\item first phase: optimize weights only in fusion layers
-%		%		\item second phase: optimize weights in all layers
-%		%	\end{itemize}
-%	\end{itemize}
-%\end{itemize}
-%\end{frame}
-%
-%\subsection{Results}
-%\begin{frame}
-%\frametitle{Experiments}
-%\framesubtitle{Selecting Fusion Network Configuration}
-%\begin{figure}
-%	\caption{24h-forecast results: distance between predicted and real location.}
-%	\includegraphics[width=0.6\linewidth]{figs/MAE.PNG} \\
-%\end{figure}
-%
-%\centering{
-%\small{Btw, naive fusion's forecasting error =\textbf{142.63 km}...\\}
-%\small{worse than best single stream alone! }
-%}
-%\end{frame}
-%
-%\begin{frame}
-%\frametitle{Experiments}
-%\framesubtitle{Comparison with the Existing Forecasting Models}
-%Qualitative: 
-%
-%\begin{figure}
-%	\includegraphics[width=1.0\linewidth]{figs/one_stom_result.png}\\
-%	\caption{The forecast errors of the three models (left: the OCFL, middle: the BCD5, right: our fusion network) on the Hurricane Ian in 2016}
-%\end{figure}
-%\end{frame}
-%
-%
-%
-%%------------------------------------------------
-%\section{Create Your Hackathon / Challenge} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
-%%------------------------------------------------
-%\subsection{Climate Informatics Hackathon}
-%
-%\begin{frame}
-%\frametitle{Outline} % Table of contents slide, comment this block out to remove it
-%\tableofcontents[currentsection] % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
-%\end{frame}
-%
-%
-%\begin{frame}
-%
-%\frametitle{Climate Informatics Hackathon}
-%
-%\begin{itemize}
-%	\item CI workshop
-%	\begin{figure}
-%	\includegraphics[width=0.65\linewidth]{figs/CI_2018.jpg} \\
-%\end{figure}
-%	\item One-day hackathon (CS + climatologists)
-%	\item Machine learning problem on climate
-%	\item This year : hurricane \textbf{intensity} forecasting
-%	\item Using the Ramp Studio framework
-%
-%\end{itemize}
-%
-%\end{frame}
-%
-%\begin{frame}
-%\frametitle{Hurricanes (remember...)}
-%
-%\begin{figure}
-%	\includegraphics[width=0.6\linewidth, height=0.6\textheight]{figs/Katrina.png}
-%	\includegraphics[width=0.3\linewidth, height=0.4\textheight]{figs/saffir-simpson.png}
-%\end{figure}
-%\begin{itemize}
-%\item Hurricane Katrina, 2005. (1 dot every 6 hours).\\
-%\item \textbf{Tracks} and \textbf{Intensity} : Two main goals of the forecast
-%\end{itemize}
-%\end{frame}
-%
-%
-%\subsection{Ramp Studio}
-%
-%\begin{frame}
-%\frametitle{RAMP?}
-%\begin{itemize}
-%\item What? Collaborative platform for data science challenges 
-%\item Where? Paris Saclay
-%\item Why?
-%	\begin{itemize}
-%		\item Kaggle-like contests...
-%		\item but submit (python) code! Models are trained on a back-end.
-%		\item And then, open phase: all participants have access to all code
-%	\end{itemize}
-%	
-%\item For who?
-%	\begin{itemize}
-%		\item Anybody can make a ramp (hackathon/challenge)
-%		\item Code is open (Git)
-%		\item Good for learning (and teaching)
-%		\item Good for research too..
-%	\end{itemize}
-%\end{itemize}
-%
-%\href{https://youtu.be/vQoH68hb85Q}{\beamergotobutton{Link to video}}
-%\href{https://www.ramp.studio}{\beamergotobutton{Link to RAMP}}
-%\href{https://github.com/ramp-kits/storm_forecast}{\beamergotobutton{Link to Git}}
-%
-%\end{frame}
-
-
 
 
 
 \begin{frame}
 
 \frametitle{Thank you!}
+
 Any questions?
+
+\begin{figure}
+	\includegraphics[width=.7\linewidth]{figs/P_20190424_134152.jpg}
+\end{figure}
+
+
 %\begin{figure}
 %	\includegraphics[width=0.65\linewidth]{figs/pipeline.png} \\
 %\end{figure}
